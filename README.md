@@ -8,3 +8,8 @@ Python 3
 4) install libraries 'pip install -r requirements.txt';
 5) start project 'python manage.py runserver';
 6) go to url 127.0.0.1:5000/payment/.
+
+
+# Heroku
+
+https://peaceful-springs-93045.herokuapp.com/payment/
