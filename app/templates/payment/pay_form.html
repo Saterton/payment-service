@@ -1,0 +1,13 @@
+{% extends "payment/layout.html" %}
+{% block body %}
+    <dl>
+        <form name="Pay" method="post" action=" https://pay.piastrix.com/ru/pay" accept-charset="UTF-8">
+            <dt><input type="hidden" name="amount" value="{{ data.amount }}"/></dt>
+            <dt><input type="hidden" name="currency" value="{{ data.currency }}"/></dt>
+            <dt><input type="hidden" name="shop_id" value="{{ data.shop_id }}"/></dt>
+            <dt><input type="hidden" name="sign" value="{{ data.sign }}"/></dt>
+            <dt><input type="hidden" name="shop_order_id" value="{{ data.shop_order_id }}"/></dt>
+            <dt><input type="submit" input type="hidden" name="description" value="Test invoice"/></dt>
+        </form>
+    </dl>
+{% endblock %}

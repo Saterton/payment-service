@@ -32,13 +32,8 @@ def create_data(keys):
 
 def pay_method():
     data = create_data(current_app.config['PAY_KEYS_REQUIRED'])
-    response = requests.post(current_app.config['PAY_URL'], data=data)
-    if response.status_code == 200:
-        g.form.save()
-        flash('Payment completed')
-    else:
-        flash('Server error. Try later')
-    return redirect(url_for('payment.payment'))
+    g.form.save()
+    return render_template('payment/pay_form.html', data=data)
 
 
 def bill_method():
