@@ -1,0 +1,13 @@
+{% extends "payment/layout.html" %}
+{% block body %}
+    <dl>
+        <form method={{ data.method }} action='{{ data.url }}'>
+            <dt><input name='lang' value='{{ data.data.lang }}'/></dt>
+            <dt><input name='m_curorderid' value='{{ data.data.m_curorderid }}'/></dt>
+            <dt><input name='m_historyid' value='{{ data.data.m_historyid }}'/></dt>
+            <dt><input name='m_historytm' value='{{ data.data.m_historytm }}'/></dt>
+            <dt><input name='referer' value='{{ data.data.referer }}'/></dt>
+            <dt><input type='submit'/></dt>
+        </form>
+    </dl>
+{% endblock %}

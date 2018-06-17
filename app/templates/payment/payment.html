@@ -1,0 +1,33 @@
+{% extends "payment/layout.html" %}
+{% block body %}
+    <h2>Pay Service</h2>
+    {% if error %}<p class='error'><strong>Error:</strong> {{ error }}{% endif %}
+    <form action="{{ url_for('payment.payment') }}" method='post'>
+        <dl>
+            {% for field in form %}
+                <dt>{{ field.label }}</dt>
+                {% if field.errors %}
+                    <ul class=errors>
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <dd>{{ field }}</dd>
+            {% endfor %}
+            <dd><input type='submit' value='Solve'></dd>
+        </dl>
+    </form>
+
+    <ul class='payment'>
+        {% for payment in payments %}
+            <li><h2>{{ payment }}</h2>
+                <p>{{ payment.amount }} {{ payment.currency }}</p>
+                <p>{{ payment.description }}</p>
+                <p>{{ payment.created_at }}</p>
+
+                {% else %}
+            <li><em>Unbelievable. No payments here so far</em>
+        {% endfor %}
+    </ul>
+{% endblock %}
