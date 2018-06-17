@@ -33,7 +33,6 @@ def create_data(keys):
 def pay_method():
     data = create_data(current_app.config['PAY_KEYS_REQUIRED'])
     response = requests.post(current_app.config['PAY_URL'], data=data)
-    print(response.text)
     if response.status_code == 200:
         g.form.save()
         flash('Payment completed')
